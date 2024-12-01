@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+
+:root {
+  --sidebar-width: 250px;
+  --darkred: #e84646;
+  --light: #fff;
+  --grey: #696969;
+}
+
+.cairo-regular {
+  font-family: "Cairo", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+.cairo-simebold {
+  font-family: "Cairo", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+.cairo-bold {
+  font-family: "Cairo", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 80px;
+  /* default collapsed width */
+  overflow: hidden;
+  padding-top: 1.5rem;
+  padding-left: 0.5rem;
+  transition: 0.09s ease-in-out;
+}
+
+.menu-toggle-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.menu-toggle {
+  cursor: pointer;
+}
+
+.menu-toggle .material-icons {
+  font-size: 2rem;
+}
+
+.menu {
+  margin: 0 -1rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  text-decoration: none;
+  border-radius: 1.2rem;
+  padding: 0.9rem 1rem;
+  background-color: #f3f3f3;
+  margin-top: 1rem;
+}
+
+.button .material-icons {
+  font-size: 1.5rem;
+  color: #696969;
+}
+
+.button .text {
+  color: var(--grey);
+}
+
+.button:hover {
+  background-color: #f1f1f1;
+}
+
+.button.active {
+  color: var(--light);
+  background-color: var(--darkred);
+}
+
+.sidebar.is-expanded {
+  width: var(--sidebar-width);
+}
+
+.sidebar.is-expanded .button .material-icons {
+  margin-right: 1rem;
+}
+
+.sidebar.is-expanded #searchButton {
+  display: none;
+}
+
+#searchButton {
+  display: none;
+}
+
+.sidebar.is-expanded #searchButton {
+  display: block;
+}
+
+#menuToggleWrap {
+  position: relative;
+  top: 0;
+}
+
+.sidebar.is-expanded #menuToggleWrap {
+  top: -3rem;
+}
+
+#menuToggleButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#menuToggleButton span {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+.sidebar.is-expanded #menuToggleButton span {
+  transform: rotate(0deg);
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  width: calc(2rem + 50px);
+  overflow: hidden;
+  padding-top: 1.5rem;
+  padding-left: 0.5rem;
+  transition: 0.09s ease-in-out;
+  /* @media (max-width: 1024px) {
+    position: absolute;
+    z-index: 99;
+  } */
+}
+
+aside .flex {
+  flex: 1 1 0%;
+}
+
+aside .menu-toggle-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  position: relative;
+  top: 0;
+  /* transition: 0.2s ease-in-out; */
+}
+
+aside .menu-toggle-wrap .menu-toggle {
+  /* transition: 0.2s ease-in-out; */
+}
+
+aside .menu-toggle-wrap .menu-toggle .material-icons {
+  font-size: 2rem;
+  /* transition: 0.2s ease-out; */
+}
+
+aside h3,
+aside .button .text {
+  display: none;
+  /* transition: display 0.3s ease-in-out; */
+}
+
+aside h3 {
+  color: var(--grey);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+aside .menu {
+  margin: 0 -1rem;
+}
+
+aside .menu .button {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  text-decoration: none;
+  border-radius: 1.2rem;
+  /* transition: 0.2s ease-in-out; */
+  padding: 0.9rem 1rem;
+}
+
+aside .menu .button .material-icons {
+  font-size: 1.5rem;
+  color: #696969;
+  /* transition: 0.2s ease-in-out; */
+}
+
+aside .menu .button .text {
+  color: var(--grey);
+  /* transition: 0.2s ease-in-out; */
+}
+
+aside .menu .button.router-link-exact-active {
+  color: var(--light);
+  background-color: var(--darkred);
+}
+
+aside .menu .button.router-link-exact-active .material-icons,
+aside .menu .button.router-link-exact-active .text {
+  color: white;
+}
+
+aside.is-expanded {
+  width: var(--sidebar-width);
+}
+
+aside.is-expanded .logo {
+  display: flex;
+  justify-content: center;
+}
+
+aside.is-expanded .menu-toggle-wrap {
+  top: -3rem;
+}
+
+aside.is-expanded .menu-toggle-wrap .menu-toggle {
+  transform: rotate(-180deg);
+}
+
+aside.is-expanded h3,
+aside.is-expanded .button .text {
+  display: inline-block;
+}
+
+aside.is-expanded .button .material-icons {
+  margin-right: 1rem;
+}
+
+.items-flex {
+  display: flex;
+  max-height: 100%;
+}
